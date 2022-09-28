@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: lime;
+  overflow: hidden;
+}
+
+.divny{
+  display: inline-flex;
+}
+
+.system{
+  animation: none;
+  margin-right: 84vw;
+  width: auto;
+  font-family: monospace;
+  font-size: 2em;
+  display: inline-block;
+  border: none;
+}
+
+.typing-demo {
+    animation: typing 3s steps(30) /*, blink step-end .5s infinite alternate*/;
+    white-space: nowrap;
+    overflow: hidden;
+    /*border-right: 3px solid */;
+    font-family: monospace;
+    font-size: 2em;
+    display: inline-block;
+    margin-left: -83.75vw; 
+}
+
+#typeAnimation{
+  animation:typing 3s steps(30), blink step-end .5s infinite alternate;
+  border-right: 3px solid;
+}
+  
+@keyframes typing {
+    from {
+      width: 0
+    }
+}
+      
+@keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+}
+
+
