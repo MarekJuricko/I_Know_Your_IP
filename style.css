@@ -21,19 +21,27 @@
 }
 
 .typing-demo {
-    animation: typing 3s steps(30) /*, blink step-end .5s infinite alternate*/;
+    animation: typing 3s steps(30);
     white-space: nowrap;
     overflow: hidden;
-    /*border-right: 3px solid */;
     font-family: monospace;
     font-size: 2em;
     display: inline-block;
     margin-left: -83.75vw; 
 }
 
+.inputText, .inputText:focus{
+  margin-left: -83.75vw; 
+  font-family: monospace;
+  font-size: 2em;
+  border: none;
+  width: auto;
+  outline: 0px solid white;
+}
+
 #typeAnimation{
   animation:typing 3s steps(30), blink step-end .5s infinite alternate;
-  border-right: 3px solid;
+  border-right: 1px solid;
 }
   
 @keyframes typing {
