@@ -119,15 +119,41 @@ function showLoc(){
     
         //window.open(`https://www.google.com/maps/place/${crd.latitude}${crd.longitude}`);
     
-        array.splice(8,0,{name: "message11",value: 'Your current position is:'});
-        array.splice(9,0,{name: "message12",value: `Latitude : ${crd.latitude}`});
-        array.splice(10,0,{name: "message13",value: `Longitude: ${crd.longitude}`});
-        array.splice(11,0,{name: "message14",value: `More or less ${Math.floor(crd.accuracy)} meters.`});
+        array.splice(9,0,{name: "message11",value: 'Your current position is:'});
+        array.splice(10,0,{name: "message12",value: `Latitude : ${crd.latitude}`});
+        array.splice(11,0,{name: "message13",value: `Longitude: ${crd.longitude}`});
+        array.splice(12,0,{name: "message14",value: `More or less ${Math.floor(crd.accuracy)} meters.`});
     });
 }
 
+//function for catching info from the input
+function checkInfo(){
+    let inOne = document.querySelector("#one");
+    inOne.addEventListener("change",function(){
+        //if input value has "y" or "Y", showLoc function is called, then messages are generated
+        if(inOne.value === "y" || inOne.value === "Y"){
+            inOne.setAttribute("disabled", "disabled");
+            showLoc();
 
-//showLoc();
+            generateMessage(8,1000);
+            generateMessage(9,6000);
+            generateMessage(10,11000);
+            generateMessage(11,16000);
+            generateMessage(12,21000);
+            generateMessage(13,26000);
+
+        //if input value has "n" or "N", lastMessage is written, then after six seconds window closes    
+        }else if(inOne.value === "n" || inOne.value === "N"){
+            inOne.setAttribute("disabled", "disabled");
+            let lastMessage = "Well, if you don't want to allow that... goodbye then";
+            write(lastMessage);
+            setTimeout(function(){
+                window.close();
+            }, 6000);
+            
+        }
+    });
+}
 
 generateMessage(0,1000);
 generateMessage(1,6000);
@@ -143,33 +169,8 @@ generateMessage(7,37000);
 
 setTimeout(function(){
     writeInput("one");
+    checkInfo();
 }, 42000); 
 
-//let inOne = document.getElementById("one");
 
-/*
-loading = setInterval(function () {
-    inOne = document.getElementById("one");
-    if (inOne) {
-        // Element Has Loaded, Put your code here!
-        console.log(inOne.value);
-    }
-}, 1000);
-
-if(inOne.value === "y"){
-    showLoc();
-}else if(inOne.value === "n"){
-    let lastMessage = "Well, if you don't want to share that... we must say farewell to each other";
-    write(lastMessage); 
-    
-}
-*/
-
-generateMessage(8,42000);
-generateMessage(9,47000);
-generateMessage(10,53000);
-generateMessage(11,58000);
-generateMessage(12,63000);
-
-generateMessage(13,68000);
 
