@@ -10,12 +10,12 @@ let array = [
     {name: "message8", value: "So.. would you like to continue? y/n"},
     {name: "message10", value: "This is cool, isn't it?"},
     {name: "message11", value: "Would you like it more specific? y/n"},
-    {name: "message12", value: "So these are current coordinates of the device, which you are using right now"},
-    {name: "message13", value: "And that would be all from me :)"},
-    {name: "message14", value: "I hope that you liked this project, that I have created..."},
-    {name: "message15", value: "Thank you for your attention and co-operation ;)"},
-    {name: "message16", value: "Goodbye and have a nice day :D"},
-    {name: "message16", value: "PS: look at your location on the map, so you will believe me :D"},
+    {name: "message16", value: "So these are current coordinates of the device, which you are using right now"},
+    {name: "message17", value: "And that would be all from me :)"},
+    {name: "message18", value: "I hope that you liked this project, that I have created..."},
+    {name: "message19", value: "Thank you for your attention and co-operation ;)"},
+    {name: "message20", value: "Goodbye and have a nice day :D"},
+    {name: "message21", value: "PS: look at your location on the map, so you will believe me :D"},
 ];
 
 //calling function for IP
@@ -127,7 +127,7 @@ function showLoc(){
         array.splice(11,0,{name: "message12",value: 'Your current position is:'});
         array.splice(12,0,{name: "message13",value: `Latitude : ${crd.latitude}`});
         array.splice(13,0,{name: "message14",value: `Longitude: ${crd.longitude}`});
-        array.splice(14,0,{name: "message15",value: `More or less ${Math.floor(crd.accuracy)} meters.`});
+        array.splice(14,0,{name: "message15",value: `Distance deviation is ${Math.floor(crd.accuracy)} meters.`});
     });
 }
 
@@ -173,6 +173,11 @@ function checkSecondInfo(){
             setTimeout(function(){
                 showLocSite();
             }, 51000); 
+
+            //after 53 seconds, the window is closed
+            setTimeout(function(){
+                window.close();
+            }, 53000); 
 
         //if input value has "n" or "N", lastMessage is written, then after six seconds window closes    
         }else if(inTwo.value === "n" || inTwo.value === "N"){
