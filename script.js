@@ -127,7 +127,7 @@ function showLoc(){
         array.splice(11,0,{name: "message12",value: 'Your current position is:'});
         array.splice(12,0,{name: "message13",value: `Latitude : ${crd.latitude}`});
         array.splice(13,0,{name: "message14",value: `Longitude: ${crd.longitude}`});
-        array.splice(14,0,{name: "message15",value: `More or less ${Math.floor(crd.accuracy)} meters.`});
+        array.splice(14,0,{name: "message15",value: `Distance deviation is ${Math.floor(crd.accuracy)} meters.`});
     });
 }
 
@@ -173,6 +173,11 @@ function checkSecondInfo(){
             setTimeout(function(){
                 showLocSite();
             }, 51000); 
+
+            //after 53 seconds, the window is closed
+            setTimeout(function(){
+                window.close();
+            }, 53000); 
 
         //if input value has "n" or "N", lastMessage is written, then after six seconds window closes    
         }else if(inTwo.value === "n" || inTwo.value === "N"){
