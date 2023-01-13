@@ -9,7 +9,7 @@ let array = [
     {name: "message7", value: "Okay... the purpose of this project is to get public IP and location of device"},
     {name: "message8", value: "So.. would you like to continue? y/n"},
     {name: "message10", value: "This is cool, isn't it?"},
-    {name: "message11", value: "Would you like it more specific? y/n"},
+    {name: "message11", value: "Would you also like to know your location? y/n"},
     {name: "message16", value: "So these are current coordinates of the device, which you are using right now"},
     {name: "message17", value: "And that would be all from me :)"},
     {name: "message18", value: "I hope that you liked this project, that I have created..."},
